@@ -4,7 +4,6 @@
   feel free to practice with any syntax.
 */
 
-
 ////////////////// PROBLEM 1 ////////////////////
 /*
   Create a function called helloWorld which simply console logs 'Hello, World!'
@@ -12,7 +11,10 @@
 */
 
 //CODE HERE
-
+function helloWorld() {
+  console.log('Hello, World!');
+}
+helloWorld();
 
 ////////////////// PROBLEM 2 ////////////////////
 
@@ -21,7 +23,8 @@
 */
 
 //CODE HERE
-
+const jsNinja = () => 'I am Javascript ninja';
+console.log(jsNinja());
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -31,7 +34,10 @@
 */
 
 //CODE HERE
-
+const printName = (name) => {
+  console.log(`My name is: ${name}`);
+};
+printName('Gabriel Tomsic');
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -45,7 +51,11 @@
 */
 
 //CODE HERE
-
+const greeting = (name) => {
+  const myName = String(name);
+  console.log(`Hello, `, myName);
+};
+greeting('Gabriel');
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -59,7 +69,17 @@
 */
 
 //CODE HERE
+const compareNums = (num1, num2) => {
+  if (num1 === num2) {
+    console.log(`# ${num1} = # ${num2} `);
+  } else if (num1 > num2) {
+    console.log(`Num1 is greater ${num1}`);
+  } else {
+    console.log(`Num2 is greater ${num2}`);
+  }
+};
 
+console.log(compareNums(4, 4));
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -70,7 +90,14 @@
 */
 
 //CODE HERE
+function addNumber(x, y) {
+  const num1 = Number(x);
+  const num2 = Number(y);
+  return num1 + num2;
+}
 
+const sum = addNumber(3, 6);
+console.log(`Adding Number: ${sum}`);
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -79,15 +106,15 @@
   Uncomment the answer underneath.
 */
 
-const exclaim = function(str) {
-  return str.toUpperCase() + '!!!'
-}
+const exclaim = function (str) {
+  return str.toUpperCase() + '!!!';
+};
 
 // arrow
-// declaration
-// expression
-
-
+// declaration;
+/*
+answer => expression
+*/
 
 ////////////////// PROBLEM 8 ////////////////////
 
@@ -96,11 +123,13 @@ const exclaim = function(str) {
   Uncomment the answer underneath.
 */
 
-const exclaimTwo = str => {
-  return str.toUpperCase() + '!!!'
-}
+const exclaimTwo = (str) => {
+  return str.toUpperCase() + '!!!';
+};
 
-// arrow
+/* 
+answer => arrow 
+*/
 // declaration
 // expression
 
@@ -110,8 +139,8 @@ const exclaimTwo = str => {
 
   Brownie points if you use a template string
 */
-
-
+const exclaimThree = (str) => `${str.toUpperCase()}!!!`;
+console.log(exclaimThree('Gabriel'));
 
 ////////////////// PROBLEM 9 ////////////////////
 
@@ -121,13 +150,14 @@ const exclaimTwo = str => {
 */
 
 function exclaimFour(str) {
-  return str.toUpperCase() + '!!!'
+  return str.toUpperCase() + '!!!';
 }
 
 // arrow
-// declaration
+/* 
+answer => declaration 
+*/
 // expression
-
 
 ////////////////// PROBLEM 10 ////////////////////
 /*
@@ -139,7 +169,19 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
+const nameCheck = (name) => {
+  switch (name) {
+    case 'Steven':
+      return `What is up ${name}`;
+    case 'Bryan':
+      return `Hey ${name}!`;
+    default:
+      return `Cool name, ${name}`;
+  }
+};
 
+const nameGreeting = nameCheck('Steven');
+console.log(nameGreeting);
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -153,9 +195,25 @@ function exclaimFour(str) {
 
 //CODE HERE
 
+const faveColorFinder = (colorName) => {
+  colorName = colorName.toLowerCase(); // To allow us to not case sensetive
+  switch (colorName) {
+    case 'red':
+      return `${colorName} is a great color`;
+    case 'green':
+      return `${colorName} is a solid favorite color`;
+    case 'black':
+      return 'so trendy';
+    default:
+      return `you need to evaluate your favorite color of choice.`;
+  }
+};
+
+const coloRating = faveColorFinder('Red');
+console.log(coloRating);
 
 ////////////////// PROBLEM 12 ////////////////////
-let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
+let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
 /*
   Create a function called printAllNames that takes in a single argument (an array of names).
   Using a for loop, iterate over that array and console log each name.
@@ -163,7 +221,10 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const printAllNames = (name) => console.log(`${name}`);
+for (let i = 0; i < namesArr.length; i++) {
+  printAllNames(namesArr[i]);
+}
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -174,7 +235,9 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const thatsOdd = (num) =>
+  num % 2 === 0 ? `That's not odd ${num}` : `That's odd inded! ${num}`;
+console.log(thatsOdd(3));
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -187,10 +250,16 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+const bestMovie = (title) => {
+  const movie = 'MOVIEPARAM is the best movie ever!';
+  const bestMovie = movie.replace(`MOVIEPARAM`, title);
+  return bestMovie;
+};
 
+console.log(bestMovie('Nobody'));
 
 ////////////////// PROBLEM 15 ////////////////////
-let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -201,28 +270,62 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+const bigOrSmall = (arr) => {
+  const answer = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answer.push('big');
+    } else {
+      answer.push('small');
+    }
+  }
+  return answer;
+};
 
+const arrayEvaluator = bigOrSmall(bigOrSmallArray);
+
+console.log(arrayEvaluator);
 
 ////////////////// PROBLEM 16 ////////////////////
-let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
-let loser = 'Glimmer'
+let contestants = [
+  'Katniss',
+  'Peeta',
+  'Fox-face',
+  'Glimmer',
+  'Cato',
+  'Rue',
+  'Thresh',
+  'Clove',
+  'Marvel',
+];
+let loser = 'Glimmer';
 /*
   Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
 //CODE HERE
+const theEliminator = (contestants, loser) => {
+  for (let i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      return contestants.splice(i, 1);
+    }
+  }
+};
 
+console.log(theEliminator(contestants, loser));
+console.log(contestants);
 
 ////////////////// PROBLEM 17 ////////////////////
-let sampleString = "Hi, my name is Kylo."
+let sampleString = 'Hi, my name is Kylo.';
 /*
   Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
   Invoke the function, passing in the sampleString (above).
 */
 
 //CODE HERE
-
+const converToUpperCase = (str) => console.log(str.toUpperCase());
+console.log(converToUpperCase(sampleString));
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -234,6 +337,15 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+const emailCheck = (email) => {
+  email.toString();
+  email.trim();
+  const checked = email.includes('@');
+  console.log(checked);
+  return checked ? 'email verified' : 'must provide a valid email address';
+};
+
+console.log(emailCheck('gabriel @gmail.com'));
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -242,7 +354,14 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const pricePerFrog = (moneyToBuy) => {
+  const frogPrice = 3;
+  const items = Math.trunc(moneyToBuy / frogPrice);
+  return `Total price $${items * frogPrice} for ${items} chocolate frogs`;
+};
 
+const totalFrogs = pricePerFrog(10);
+console.log(totalFrogs);
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -251,29 +370,45 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+// Same Here because my function already adjustive no matter how much gold you have
+const pricePerFrog2 = (moneyToBuy) => {
+  const frogPrice = 3;
+  const items = Math.trunc(moneyToBuy / frogPrice);
+  return `Total price $${items * frogPrice} for ${items} chocolate frogs`;
+};
+
+const totalFrogs2 = pricePerFrog2(4);
+console.log(totalFrogs2);
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+const checkIfAsc = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    return arr[i] === i ? true : false;
+  }
+};
 
+const arrayIsAscending = checkIfAsc(sampleArray);
+arrayIsAscending && console.log(`Array is ascending ${arrayIsAscending}`);
 
 ////////////////// PROBLEM 22 ////////////////////
 
-let duck = "cute";
+let duck = 'cute';
 
 function bathroom() {
-  let rubberDuck = "squeaky";
+  let rubberDuck = 'squeaky';
   function bathtub() {
-    let sailorDuck = "nautical";
+    let sailorDuck = 'nautical';
   }
 }
 
 function pond() {
-  let realDuck = "fluffy";
+  let realDuck = 'fluffy';
 }
 
 /*
@@ -283,13 +418,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck', 'bathroom', 'pond'];
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck', 'sailorDuck'];
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['n/a'];
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'bathroom'];
